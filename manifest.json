@@ -1,0 +1,15 @@
+{
+    "manifest_version": 3,
+    "name": "Google Dorking Helper",
+    "version": "1.0",
+    "description": "Adds Google Dorking options directly on Google.com.",
+    "permissions": ["scripting"],
+    "content_scripts": [
+      {
+        "matches": ["*://www.google.com/*"],
+        "js": ["content.js"],
+        "css": ["style.css"]
+      }
+    ]
+  }
+  
