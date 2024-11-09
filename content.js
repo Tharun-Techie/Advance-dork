@@ -74,14 +74,13 @@ if (!document.getElementById("dorking-options")) {
     const dorkType = document.getElementById("dorking-select").value;
     const query = document.getElementById("dorking-query").value;
 
-    if (dorkType && query) {
+    if (query) {
       // Construct the Google search URL with the selected dork and query
-      const searchQuery = `${dorkType} ${query}`.trim();
+      const searchQuery = `${dorkType ? dorkType + " " : ""}${query}`.trim(); // If dork is selected, prepend it to the query
       const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`;
-      window.location.href = googleSearchUrl; // Redirect to Google with the constructed query
-    } else if (query) {
-      const googleSearchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
-      window.location.href = googleSearchUrl; // Redirect to Google with the entered query
+
+      // Manually redirect to the Google search URL
+      window.location.href = googleSearchUrl;
     }
   }
 }
