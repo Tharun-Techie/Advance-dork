@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Google Dorking Tool</title>
+  <title>AdvanceDork - Google Dorking Tool</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
     <h2>Google Dorking Tool</h2>
-    <select id="dorking-select">
-      <option value="">Select Dork Option</option>
+    
+    <!-- Basic Dorking Options -->
+    <select id="basicDorkingSelect">
+      <option value="">Select Basic Dork Option</option>
       <option value="(term | operator)">Group Terms (OR)</option>
       <option value="*">Wildcard</option>
       <option value="\"keywords\"">Exact Match</option>
@@ -22,8 +24,34 @@
       <option value="inurl:">Keyword in URL</option>
       <option value="intitle:">Keyword in Title</option>
     </select>
-    <input type="text" id="query" placeholder="Enter search query">
-    <button id="search-button">Search</button>
+
+    <!-- Advanced Dorking Options -->
+    <select id="advancedDorkingSelect">
+      <option disabled selected>Select Advanced Category</option>
+      <option value="webcams">Webcams</option>
+      <option value="sqli">SQL Injection</option>
+      <option value="xss">Cross-Site Scripting</option>
+      <option value="vulnerableServers">Vulnerable Servers</option>
+      <option value="sensitiveDirectories">Sensitive Directories</option>
+      <option value="databaseFiles">Database Files</option>
+      <option value="loginPages">Login Pages</option>
+      <option value="networkDevices">Network Devices</option>
+      <option value="cctvSystems">CCTV Systems</option>
+      <option value="apacheTomcat">Apache Tomcat</option>
+      <option value="errorMessages">Error Messages</option>
+      <option value="gitRepos">Git Repository Files</option>
+      <option value="configFiles">Configuration Files</option>
+      <option value="phpInfoFiles">PHP Info Files</option>
+      <option value="wordpressSites">WordPress Sites</option>
+      <option value="openDirectories">Open Directories</option>
+      <option value="googleDriveLinks">Google Drive Links</option>
+      <option value="wpConfig">WordPress Configuration Files</option>
+      <option value="awsKeys">AWS Access Keys</option>
+    </select>
+    
+    <!-- Custom Search Query -->
+    <input type="text" id="query" placeholder="Enter custom query or keyword...">
+    <button id="searchButton">Search</button>
   </div>
 
   <script src="popup.js"></script>
