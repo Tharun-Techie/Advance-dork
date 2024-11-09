@@ -1,14 +1,21 @@
 {
-  "manifest_version": 3,
-  "name": "Advanced Google Dorking Extension",
-  "version": "1.0",
-  "description": "Easily access Google Dorking search operators from within Google.",
-  "content_scripts": [
-    {
-      "matches": ["*://www.google.com/*"],
-      "js": ["content.js"],
-      "css": ["style.css"]
-    }
-  ],
-  "permissions": ["scripting", "activeTab"]
-}
+    "manifest_version": 3,
+    "name": "AdvanceDork",
+    "version": "1.0",
+    "description": "A Chrome extension for advanced Google Dorking.",
+    "action": {
+      "default_icon": {
+        "16": "icons/a.jpg",
+        "48": "icons/a.jpg",
+        "128": "icons/a.jpg"
+      },
+      "default_popup": "popup.html"
+    },
+    "icons": {
+      "16": "icons/a.jpg",
+      "48": "icons/a.jpg",
+      "128": "icons/a.jpg"
+    },
+    "permissions": ["activeTab", "scripting"]
+  }
+  

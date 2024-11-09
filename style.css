@@ -1,16 +1,36 @@
-#dorking-options {
+body {
     font-family: Arial, sans-serif;
-    background-color: white;
-    border-radius: 5px;
-    padding: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    padding: 0;
   }
   
-  #dorking-options select,
-  #dorking-options input {
-    font-size: 14px;
-    padding: 5px;
-    border-radius: 4px;
+  .container {
+    width: 250px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  select, input, button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
     border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  button {
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #357ae8;
   }
   

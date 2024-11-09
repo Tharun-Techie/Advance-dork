@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Dorking Tool</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Google Dorking Tool</h2>
+    <select id="dorking-select">
+      <option value="">Select Dork Option</option>
+      <option value="(term | operator)">Group Terms (OR)</option>
+      <option value="*">Wildcard</option>
+      <option value="\"keywords\"">Exact Match</option>
+      <option value="1..100">Number Range</option>
+      <option value="-site:example.com">Exclude Site</option>
+      <option value="site:">Search Specific Site</option>
+      <option value="filetype:pdf">Document Format (PDF)</option>
+      <option value="filetype:docx">Document Format (DOCX)</option>
+      <option value="inurl:">Keyword in URL</option>
+      <option value="intitle:">Keyword in Title</option>
+    </select>
+    <input type="text" id="query" placeholder="Enter search query">
+    <button id="search-button">Search</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
