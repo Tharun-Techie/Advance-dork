@@ -1,7 +1,16 @@
 #dorking-options {
+    font-family: Arial, sans-serif;
     background-color: white;
-    padding: 5px;
-    border: 1px solid #ddd;
     border-radius: 5px;
+    padding: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  #dorking-options select,
+  #dorking-options input {
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
   }
   
