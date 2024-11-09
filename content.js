@@ -65,7 +65,8 @@ if (!document.getElementById("dorking-options")) {
   });
 
   // Event listener for clicking the search button
-  document.getElementById("dorking-search-button").addEventListener("click", function () {
+  document.getElementById("dorking-search-button").addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent form submission (page refresh)
     triggerSearch();
   });
 
