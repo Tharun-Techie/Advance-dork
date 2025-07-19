@@ -239,11 +239,9 @@ class GoogleDorkTool {
     }
 
     async clearHistory() {
-        if (confirm('Are you sure you want to clear all search history?')) {
-            this.searchHistory = [];
-            await this.saveHistory();
-            this.renderHistory();
-        }
+      this.searchHistory = [];
+      await this.saveHistory();
+      this.renderHistory();
     }
 }
 
