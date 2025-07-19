@@ -1,59 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AdvanceDork - Google Dorking Tool</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Google Dork Tool</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <h2>Google Dorking Tool</h2>
-    
-    <!-- Basic Dorking Options -->
-    <select id="basicDorkingSelect">
-      <option value="">Select Basic Dork Option</option>
-      <option value="(term | operator)">Group Terms (OR)</option>
-      <option value="*">Wildcard</option>
-      <option value="\"keywords\"">Exact Match</option>
-      <option value="1..100">Number Range</option>
-      <option value="-site:example.com">Exclude Site</option>
-      <option value="site:">Search Specific Site</option>
-      <option value="filetype:pdf">Document Format (PDF)</option>
-      <option value="filetype:docx">Document Format (DOCX)</option>
-      <option value="inurl:">Keyword in URL</option>
-      <option value="intitle:">Keyword in Title</option>
-    </select>
+    <div class="container">
+        <header>
+            <h1>🔍 Advanced Dork Tool</h1>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="quick">Quick Search</button>
+                <button class="tab-btn" data-tab="builder">Dork Builder</button>
+                <button class="tab-btn" data-tab="templates">Templates</button>
+                <button class="tab-btn" data-tab="history">History</button>
+            </div>
+        </header>
 
-    <!-- Advanced Dorking Options -->
-    <select id="advancedDorkingSelect">
-      <option disabled selected>Select Advanced Category</option>
-      <option value="webcams">Webcams</option>
-      <option value="sqli">SQL Injection</option>
-      <option value="xss">Cross-Site Scripting</option>
-      <option value="vulnerableServers">Vulnerable Servers</option>
-      <option value="sensitiveDirectories">Sensitive Directories</option>
-      <option value="databaseFiles">Database Files</option>
-      <option value="loginPages">Login Pages</option>
-      <option value="networkDevices">Network Devices</option>
-      <option value="cctvSystems">CCTV Systems</option>
-      <option value="apacheTomcat">Apache Tomcat</option>
-      <option value="errorMessages">Error Messages</option>
-      <option value="gitRepos">Git Repository Files</option>
-      <option value="configFiles">Configuration Files</option>
-      <option value="phpInfoFiles">PHP Info Files</option>
-      <option value="wordpressSites">WordPress Sites</option>
-      <option value="openDirectories">Open Directories</option>
-      <option value="googleDriveLinks">Google Drive Links</option>
-      <option value="wpConfig">WordPress Configuration Files</option>
-      <option value="awsKeys">AWS Access Keys</option>
-    </select>
-    
-    <!-- Custom Search Query -->
-    <input type="text" id="query" placeholder="Enter custom query or keyword...">
-    <button id="searchButton">Search</button>
-  </div>
+        <!-- Quick Search Tab -->
+        <div id="quick" class="tab-content active">
+            <div class="search-section">
+                <input type="text" id="quickSearch" placeholder="Enter your search query..." class="search-input">
+                <button id="quickSearchBtn" class="search-btn">🔍 Search</button>
+            </div>
+            
+            <div class="quick-categories">
+                <h3>Quick Categories</h3>
+                <div class="category-grid">
+                    <button class="category-btn" data-category="security">🔒 Security Research</button>
+                    <button class="category-btn" data-category="files">📄 Document Hunt</button>
+                    <button class="category-btn" data-category="directories">📁 Open Directories</button>
+                    <button class="category-btn" data-category="login">🔑 Login Pages</button>
+                    <button class="category-btn" data-category="errors">⚠️ Error Pages</button>
+                    <button class="category-btn" data-category="cameras">📹 Cameras</button>
+                </div>
+            </div>
+        </div>
 
-  <script src="popup.js"></script>
+        <!-- Dork Builder Tab -->
+        <div id="builder" class="tab-content">
+            <div class="builder-section">
+                <h3>Build Custom Dork</h3>
+                
+                <div class="form-group">
+                    <label>Search Terms:</label>
+                    <input type="text" id="searchTerms" placeholder="Enter keywords">
+                </div>
+
+                <div class="form-group">
+                    <label>Site/Domain:</label>
+                    <div class="input-group">
+                        <select id="siteOperator">
+                            <option value="site:">site: (specific site)</option>
+                            <option value="-site:">-site: (exclude site)</option>
+                        </select>
+                        <input type="text" id="siteValue" placeholder="example.com">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>File Type:</label>
+                    <div class="input-group">
+                        <select id="fileType">
+                            <option value="">Any file type</option>
+                            <option value="pdf">PDF</option>
+                            <option value="doc">DOC</option>
+                            <option value="docx">DOCX</option>
+                            <option value="xls">XLS</option>
+                            <option value="ppt">PPT</option>
+                            <option value="txt">TXT</option>
+                            <option value="sql">SQL</option>
+                            <option value="xml">XML</option>
+                            <option value="json">JSON</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>In URL:</label>
+                    <input type="text" id="inUrl" placeholder="admin, login, etc.">
+                </div>
+
+                <div class="form-group">
+                    <label>In Title:</label>
+                    <input type="text" id="inTitle" placeholder="index of, login, etc.">
+                </div>
+
+                <div class="form-group">
+                    <label>Date Range:</label>
+                    <div class="input-group">
+                        <select id="dateRange">
+                            <option value="">Any time</option>
+                            <option value="d">Past day</option>
+                            <option value="w">Past week</option>
+                            <option value="m">Past month</option>
+                            <option value="y">Past year</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="dork-preview">
+                    <label>Generated Dork:</label>
+                    <div id="dorkPreview" class="preview-box"></div>
+                </div>
+
+                <button id="buildSearchBtn" class="search-btn">🔍 Search with Built Dork</button>
+            </div>
+        </div>
+
+        <!-- Templates Tab -->
+        <div id="templates" class="tab-content">
+            <div class="template-section">
+                <h3>Dork Templates</h3>
+                <div class="template-categories">
+                    <div class="template-category">
+                        <h4>🔒 Security Research</h4>
+                        <div class="template-list">
+                            <button class="template-btn" data-dork='inurl:"/admin/login" OR intitle:"Admin Login"'>Admin Panels</button>
+                            <button class="template-btn" data-dork='filetype:sql "password" OR filetype:sql "username"'>SQL Files with Credentials</button>
+                            <button class="template-btn" data-dork='intitle:"index of" intext:"password.txt"'>Password Files</button>
+                        </div>
+                    </div>
+                    
+                    <div class="template-category">
+                        <h4>📄 Document Discovery</h4>
+                        <div class="template-list">
+                            <button class="template-btn" data-dork='filetype:pdf "confidential" OR "internal use"'>Confidential Documents</button>
+                            <button class="template-btn" data-dork='filetype:xlsx OR filetype:xls "budget" OR "financial"'>Financial Reports</button>
+                            <button class="template-btn" data-dork='filetype:ppt OR filetype:pptx "presentation" -inurl:template'>Presentations</button>
+                        </div>
+                    </div>
+
+                    <div class="template-category">
+                        <h4>🌐 Web Technologies</h4>
+                        <div class="template-list">
+                            <button class="template-btn" data-dork='inurl:/wp-admin OR inurl:/wp-login "WordPress"'>WordPress Sites</button>
+                            <button class="template-btn" data-dork='intitle:"Apache Tomcat" OR intext:"Apache Tomcat"'>Apache Tomcat</button>
+                            <button class="template-btn" data-dork='inurl:".git" filetype:git'>Git Repositories</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- History Tab -->
+        <div id="history" class="tab-content">
+            <div class="history-section">
+                <div class="history-header">
+                    <h3>Search History</h3>
+                    <button id="clearHistory" class="clear-btn">Clear All</button>
+                </div>
+                <div id="historyList" class="history-list"></div>
+            </div>
+        </div>
+
+        <footer>
+            <p class="disclaimer">⚠️ Use responsibly and ethically. Respect website terms of service.</p>
+        </footer>
+    </div>
+
+    <script src="popup.js"></script>
 </body>
 </html>

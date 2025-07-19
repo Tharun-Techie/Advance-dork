@@ -1,21 +1,28 @@
 {
-    "manifest_version": 3,
-    "name": "AdvanceDork",
-    "version": "1.0",
-    "description": "A Chrome extension for advanced Google Dorking.",
-    "action": {
-      "default_icon": {
-        "16": "icons/a.jpg",
-        "48": "icons/a.jpg",
-        "128": "icons/a.jpg"
-      },
-      "default_popup": "popup.html"
+  "manifest_version": 3,
+  "name": "Advanced Google Dork Tool",
+  "version": "2.0",
+  "description": "Professional Google Dorking tool for security research, competitive intelligence, and advanced searches",
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
     },
-    "icons": {
-      "16": "icons/a.jpg",
-      "48": "icons/a.jpg",
-      "128": "icons/a.jpg"
-    },
-    "permissions": ["activeTab", "scripting"]
-  }
-  
+    "default_popup": "popup.html",
+    "default_title": "Advanced Dork Tool"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.google.com/*"
+  ]
+}
